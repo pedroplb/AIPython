@@ -10,7 +10,7 @@ resposta = openai.chat.completions.create(
         messages=[
             {
                 "role": "system",
-                "content": "Gere nomes de produtos fictícios sem descrição de acordo com a requisição do usuário."
+                "content": "Gere nomes de produtos de super mercado e seu preço sem descrição de acordo com a requisição do usuário."
             },
             {
                 "role": "user",
