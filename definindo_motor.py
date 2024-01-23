@@ -37,12 +37,15 @@ modelo = "gpt-3.5-turbo"
 
 #o total de tokens deve conter entrada-sistema e entrada-usuario e saida, neste caso 256 já estão reservados pelo
 # max_tokens e precisa ser subtraido de 4096
-if numero_de_tokens >= 3840:
+
+tamanho_saida_esperado = 2048
+
+if numero_de_tokens >= 4096 - tamanho_saida_esperado:
     modelo = "gpt-3.5-turbo-16k"
 
 print(f"Modelo Escolhido: {modelo}")
 
-resposta = openai.ChatCompletion.create(
+resposta = openai.chat.completions.create(
   model=modelo,
   messages=[
     {
