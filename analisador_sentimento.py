@@ -1,7 +1,6 @@
 import os
-import openai
 import dotenv
-import tiktoken
+import openai
 
 dotenv.load_dotenv()
 cliente = openai.OpenAI(api_key = os.getenv("OPENAI_API_KEY"))
